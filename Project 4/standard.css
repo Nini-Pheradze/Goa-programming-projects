@@ -1,0 +1,103 @@
+body{
+    background-color: #E7D283;
+}
+
+/* style for standard class */
+.hotel{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #EB5A3C;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.hotel ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.hotel li{
+    margin: 0 15px;
+}
+
+.hotel a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.hotel a:hover{
+    color: #E7D283;
+}
+
+/* style for h1 */
+h1{
+    font-size: 80px;
+    color: #ffffff;
+    font-weight: 200;
+    text-align: start;
+    margin-top: 80px;
+    margin-left: 30px;
+}
+
+/* Style for the image */
+.image{
+    margin-top: 10px;
+    height: 400px;
+    width: 450px; 
+    border-radius: 10px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;  /* Vertically center the items */
+    justify-content: space-between;
+}
+
+.image:hover{
+    transform: scale(1.05);
+}
+
+/* Style for the price */
+.book-price {
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+/* Style for the Book button */
+.book-button {
+    background-color: #EB5A3C;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-button:hover {
+    background-color: #DF9755;
+}
+
+/* for all the images i have used */
+#div-img{
+    display: flex;       
+    justify-content: space-between;  
+    gap: 20px;           
+    width: 80%;    
+}
