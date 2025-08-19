@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* მთლიანი გვერდის ფონური სტილი */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* კონტეინერი, რომელიც ზღუდავს გვერდის სიგანეს */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ჰედერის სტილი */
+header {
+    background: rgba(255, 255, 255, 0.95); 
+    backdrop-filter: blur(10px);           
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    border-radius: 15px;
+}
+
+/* ნავიგაცია ჰედერში */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ლოგო */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+/* ნავიგაციის ბმულები */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #667eea;
+}
+
+/* გვერდები (დეფოლტად დამალულია) */
+.page {
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* აქტიური გვერდი ჩანს */
+.page.active {
+    display: block;
+}
+
+/* გვერდის გამოჩენის ანიმაცია */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* საძიებო ბლოკი */
+.search-container {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.search-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* საძიებო ველი */
+.search-box {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #667eea;
+}
+
+/* ღილაკები */
+.search-btn, .btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.search-btn:hover, .btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ფილტრის ღილაკები */
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    border: 2px solid #667eea;
+    background: transparent;
+    color: #667eea;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* შედეგების ბარათების განლაგება */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* თითოეული ბარათი */
+.item-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ბარათის სურათის ადგილი */
+.item-image {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #999;
+}
+
+/* ბარათის ინფორმაცია */
+.item-info {
+    padding: 1rem;
+}
+
+.item-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.item-meta {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.rating {
+    color: #f39c12;
+    margin-top: 0.5rem;
+}
+
+/* ფორმის კონტეინერი */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #667eea;
+}
+
+/* დეტალური გვერდის კონტეინერი */
+.detail-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.detail-image {
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #999;
+}
+
+.detail-info {
+    flex: 1;
+}
+
+.detail-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.detail-meta {
+    margin-bottom: 2rem;
+}
+
+.detail-meta div {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.detail-description {
+    line-height: 1.6;
+    color: #555;
+}
+
+/* უკან დაბრუნების ღილაკი */
+.back-btn {
+    background: #6c757d;
+    margin-bottom: 2rem;
+}
+
+/* მობილურისთვის (რესპონსივი) */
+@media (max-width: 768px) {
+    .detail-container {
+        flex-direction: column;
+    }
+
+    .detail-image {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .nav-links {
+        display: none; /* პატარა ეკრანზე ნავიგაცია იმალება */
+    }
+}
